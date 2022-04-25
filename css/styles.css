@@ -120,12 +120,13 @@ img {
 .header-link:focus {
   color: var(--accent-color);
 }
-.current::after {
+.header-link.current::after {
+  content: '';
+
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
 
-  content: '';
   width: 100%;
   height: 4px;
   background-color: var(--accent-color);
@@ -463,7 +464,7 @@ img {
   position: absolute;
   bottom: 0;
   left: 0;
-  transform: translateY(100%);
+  transform: translateY(calc(100% + 1px));
   transition: transform 250ms ease;
 
   display: flex;
@@ -524,7 +525,7 @@ img {
   pointer-events: none;
 }
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
+  transform: translate(-50%, -50%) scale(0.8);
 }
 .modal {
   position: absolute;
